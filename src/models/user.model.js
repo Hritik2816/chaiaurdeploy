@@ -32,6 +32,12 @@ const userSchema = new Schema({
   coverImage: {
     type: String,
   },
+  watchHistory: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Movie',
+    }
+  ],
   password: {
     type: String,
     required: [true, 'Password is required'],
@@ -39,13 +45,7 @@ const userSchema = new Schema({
   },
   refreshToken: {
     type: String
-  },
-  watchHistory: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Movie',
-    }
-  ]
+  }
 
 },
   {
